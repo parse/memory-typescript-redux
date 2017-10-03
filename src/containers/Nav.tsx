@@ -32,8 +32,8 @@ class Nav extends React.Component<NavProps, {}> {
 
     return (
       <p className="navbar-brand">
-        {status === GameStatus.Ongoing && <p>Game is ongoing</p>}
-        {status === GameStatus.Ended && <p>Game has ended</p>}
+        {status === GameStatus.Ongoing && <span>Game is ongoing</span>}
+        {status === GameStatus.Ended && <span>Game has ended</span>}
       </p>
     );
   }
