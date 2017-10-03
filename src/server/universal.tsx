@@ -13,7 +13,6 @@ export default function universalLoader(req: any, res: any) {
   const filePath = path.resolve(__dirname, '..', '..', 'build', 'index.html');
 
   fs.readFile(filePath, 'utf8', (err: Error, htmlData: String) => {
-    console.log('FIRE!');
     if (err) {
       console.error('read err', err);
       return res.status(404).end();
@@ -26,7 +25,6 @@ export default function universalLoader(req: any, res: any) {
     );
 
     // we're good, send the response
-    console.log('FIRE!');
     const RenderedApp = htmlData.replace('{{SSR}}', markup);
     res.send(RenderedApp);
   });
