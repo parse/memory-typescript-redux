@@ -4,7 +4,12 @@ import { takeEvery, fork, put, select, all, call } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import { StoreState } from '../types/index';
 import { MemoryAction } from '../actions';
-import { isGameOver, isInWaitingState } from '../selectors';
+import {
+  isGameOver,
+  isInWaitingState,
+  hasSelectedTwoTiles,
+  flippedTiles,
+} from '../selectors';
 
 import * as constants from '../constants';
 import * as actions from '../actions';
@@ -12,12 +17,10 @@ import * as actions from '../actions';
 function* gameSequence(action: MemoryAction) {
   const state = yield select();
 
-  const flippedTiles = _.filter(
-    state.tiles,
-    _.matches({ flipped: true, matched: false })
+  const selectedTwoTiles = yield select(innerState =>
+    hasSelectedTwoTiles(innerState)
   );
-
-  if (flippedTiles.length >= 2) {
+  if (selectedTwoTiles) {
     yield put(actions.toggleIsWaiting(true));
   }
 
@@ -25,7 +28,9 @@ function* gameSequence(action: MemoryAction) {
   if (isWaiting) {
     yield put(actions.incrementTries());
     yield call(delay, 1000);
-    yield put(actions.matchCheck(flippedTiles));
+
+    const tilesFlipped = yield select(innerState => flippedTiles(innerState));
+    yield put(actions.matchCheck(tilesFlipped));
 
     const gameOver = yield select(innerState => isGameOver(innerState));
     if (gameOver) {
