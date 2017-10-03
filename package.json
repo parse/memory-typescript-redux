@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-addons-test-utils": "^15.4.2",
-    "react-scripts-ts": "2.7.0",
-    "tslint-config-prettier": "^1.5.0"
-  },
-  "dependencies": {
     "@types/body-parser": "^1.16.5",
     "@types/compression": "^0.0.34",
     "@types/enzyme": "^2.7.2",
@@ -20,6 +15,11 @@
     "@types/react-dom": "^15.5.5",
     "@types/react-redux": "^5.0.9",
     "@types/redux-saga": "^0.10.5",
+    "react-addons-test-utils": "^15.4.2",
+    "react-scripts-ts": "2.7.0",
+    "tslint-config-prettier": "^1.5.0"
+  },
+  "dependencies": {
     "body-parser": "^1.17.2",
     "compression": "^1.7.0",
     "enzyme": "^3.0.0",
