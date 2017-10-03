@@ -7,6 +7,7 @@ function generateTiles(): Array<Tile> {
 
   for (let i = 1; i < 9; i++) {
     images.push({
+      tileKey: i,
       image: `assets/img/${i}.jpg`,
       flipped: false,
       matched: false,

@@ -49,7 +49,7 @@ export function memoryReducer(
     case MATCH_CHECK:
       const { tiles } = state;
 
-      if (action.flippedTiles[0].image === action.flippedTiles[1].image) {
+      if (action.flippedTiles[0].tileKey === action.flippedTiles[1].tileKey) {
         let newTiles = tiles.map(t => {
           if (t.flipped === true && t.matched === false) {
             return {

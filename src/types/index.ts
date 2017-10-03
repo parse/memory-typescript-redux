@@ -6,6 +6,7 @@ export interface StoreState {
 
 export interface Tile {
   image: String;
+  tileKey: number;
   flipped: Boolean;
   matched: Boolean;
 }
