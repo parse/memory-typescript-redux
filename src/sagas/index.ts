@@ -8,7 +8,7 @@ import {
   isGameOver,
   isInWaitingState,
   hasSelectedTwoTiles,
-  flippedTiles,
+  flippedUnmatchedTiles,
 } from '../selectors';
 
 import * as constants from '../constants';
@@ -29,7 +29,9 @@ function* gameSequence(action: MemoryAction) {
     yield put(actions.incrementTries());
     yield call(delay, 1000);
 
-    const tilesFlipped = yield select(innerState => flippedTiles(innerState));
+    const tilesFlipped = yield select(innerState =>
+      flippedUnmatchedTiles(innerState)
+    );
     yield put(actions.matchCheck(tilesFlipped));
 
     const gameOver = yield select(innerState => isGameOver(innerState));
