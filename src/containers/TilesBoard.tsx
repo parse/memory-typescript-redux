@@ -70,10 +70,10 @@ function mapDispatchToProps(dispatch: Dispatch<actions.MemoryAction>) {
 
   return bindActionCreators(
     {
-      toggleIsWaiting: toggleIsWaiting,
-      incrementTries: incrementTries,
-      matchCheck: matchCheck,
-      flipTile: flipTile,
+      toggleIsWaiting,
+      incrementTries,
+      matchCheck,
+      flipTile,
     },
     dispatch
   );
