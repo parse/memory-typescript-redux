@@ -16,6 +16,16 @@ export function startGame(): StartGame {
   };
 }
 
+export interface EndGame {
+  type: constants.END_GAME;
+}
+
+export function endGame(): EndGame {
+  return {
+    type: constants.END_GAME,
+  };
+}
+
 export interface FlipTile {
   type: constants.FLIP_TILE;
   index: number;
@@ -66,6 +76,7 @@ export function matchCheck(flippedTiles: Array<Tile>): MatchCheck {
 
 export type MemoryAction =
   | StartGame
+  | EndGame
   | FlipTile
   | ToggleIsWaiting
   | IncrementTries

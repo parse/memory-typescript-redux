@@ -28,6 +28,19 @@ function* gameSequence(action: MemoryAction) {
     yield put(actions.incrementTries());
     yield call(delay, 1000);
     yield put(actions.matchCheck(flippedTiles));
+
+    const isGameOver = yield select((innerState: StoreState) => {
+      const flippedTotal = _.filter(
+        innerState.tiles,
+        _.matches({ flipped: true, matched: true })
+      );
+
+      return flippedTotal.length === innerState.tiles.length;
+    });
+
+    if (isGameOver) {
+      yield put(actions.endGame());
+    }
   }
 }
 

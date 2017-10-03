@@ -4,11 +4,12 @@ import * as actions from '../actions';
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { StoreState, Tile as TileType } from '../types/index';
+import { StoreState, Tile as TileType, GameStatus } from '../types/index';
 
 interface NavProps {
   startGame: () => void;
   numberOfTries: number;
+  status: GameStatus;
 }
 
 class Nav extends React.Component<NavProps, {}> {
@@ -26,6 +27,17 @@ class Nav extends React.Component<NavProps, {}> {
     }, 1000);
   }
 
+  renderGameStatus() {
+    const { status } = this.props;
+
+    return (
+      <p className="navbar-brand">
+        {status === GameStatus.Ongoing && <p>Game is ongoing</p>}
+        {status === GameStatus.Ended && <p>Game has ended</p>}
+      </p>
+    );
+  }
+
   render() {
     const { numberOfTries } = this.props;
 
@@ -37,6 +49,7 @@ class Nav extends React.Component<NavProps, {}> {
               Number of tries:{' '}
               <span className="label label-success">{numberOfTries}</span>
             </p>
+            {this.renderGameStatus()}
           </div>
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
@@ -53,9 +66,10 @@ class Nav extends React.Component<NavProps, {}> {
   }
 }
 
-function mapStateToProps({ numberOfTries }: StoreState) {
+function mapStateToProps({ numberOfTries, status }: StoreState) {
   return {
     numberOfTries,
+    status,
   };
 }
 

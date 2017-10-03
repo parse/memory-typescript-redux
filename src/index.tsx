@@ -14,7 +14,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './App';
 
 import { memoryReducer } from './reducers/index';
-import { StoreState } from './types/index';
+import { StoreState, GameStatus } from './types/index';
 import rootSaga from './sagas/index';
 
 import './styles/css/index.css';
@@ -32,15 +32,14 @@ function configureStore(initialState: StoreState, rootReducer: any, saga: any) {
   return internalStore;
 }
 
-const store = configureStore(
-  {
-    tiles: [],
-    isWaiting: false,
-    numberOfTries: 0,
-  },
-  memoryReducer,
-  rootSaga
-);
+const startState = {
+  tiles: [],
+  isWaiting: false,
+  numberOfTries: 0,
+  status: GameStatus.NotStarted,
+};
+
+const store = configureStore(startState, memoryReducer, rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>

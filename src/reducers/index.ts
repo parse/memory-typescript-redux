@@ -1,9 +1,10 @@
 import { MemoryAction } from '../actions';
-import { StoreState } from '../types/index';
+import { StoreState, GameStatus } from '../types/index';
 import * as types from '../constants';
 
 import {
   START_GAME,
+  END_GAME,
   FLIP_TILE,
   TOGGLE_IS_WAITING,
   MATCH_CHECK,
@@ -20,7 +21,14 @@ export function memoryReducer(
         ...state,
         isWaiting: false,
         numberOfTries: 0,
+        status: GameStatus.Ongoing,
         tiles: [...action.tiles],
+      };
+
+    case END_GAME:
+      return {
+        ...state,
+        status: GameStatus.Ended,
       };
 
     case FLIP_TILE:

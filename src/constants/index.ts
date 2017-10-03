@@ -1,6 +1,9 @@
 export const START_GAME = 'START_GAME';
 export type START_GAME = typeof START_GAME;
 
+export const END_GAME = 'END_GAME';
+export type END_GAME = typeof END_GAME;
+
 export const FLIP_TILE = 'FLIP_TILE';
 export type FLIP_TILE = typeof FLIP_TILE;
 
