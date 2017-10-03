@@ -22,33 +22,6 @@ interface TilesBoardProps {
 }
 
 class TilesBoard extends React.Component<TilesBoardProps, {}> {
-  componentDidUpdate() {
-    const {
-      tiles,
-      toggleIsWaiting,
-      matchCheck,
-      incrementTries,
-      isWaiting,
-    } = this.props;
-
-    const flippedTiles = _.filter(
-      tiles,
-      _.matches({ flipped: true, matched: false })
-    );
-
-    if (flippedTiles.length >= 2) {
-      toggleIsWaiting(true);
-
-      if (isWaiting) {
-        incrementTries();
-
-        setTimeout(() => {
-          matchCheck(flippedTiles);
-        }, 500);
-      }
-    }
-  }
-
   onHandleClickTile(tile: TileType, index: number) {
     const { flipTile, isWaiting } = this.props;
 

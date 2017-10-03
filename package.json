@@ -15,12 +15,15 @@
     "@types/react": "16.0.7",
     "@types/react-dom": "^15.5.5",
     "@types/react-redux": "^5.0.9",
+    "@types/redux-saga": "^0.10.5",
     "enzyme": "^3.0.0",
     "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.2",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-saga": "^0.15.6"
   },
   "scripts": {
     "start": "react-scripts-ts start",
