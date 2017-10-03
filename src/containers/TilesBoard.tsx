@@ -60,8 +60,8 @@ function mapStateToProps(state: StoreState) {
   const { tiles, isWaiting } = state;
 
   return {
-    tiles: tiles,
-    isWaiting: isWaiting,
+    tiles,
+    isWaiting,
   };
 }
 
