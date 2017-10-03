@@ -1,8 +1,5 @@
-import * as _ from 'lodash';
-
-import { takeEvery, fork, put, select, all, call } from 'redux-saga/effects';
+import { takeEvery, put, select, all, call } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
-import { StoreState } from '../types/index';
 import { MemoryAction } from '../actions';
 import {
   isGameOver,
@@ -15,8 +12,6 @@ import * as constants from '../constants';
 import * as actions from '../actions';
 
 function* gameSequence(action: MemoryAction) {
-  const state = yield select();
-
   const selectedTwoTiles = yield select(innerState =>
     hasSelectedTwoTiles(innerState)
   );

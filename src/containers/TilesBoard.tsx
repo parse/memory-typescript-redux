@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as actions from '../actions';
-import * as _ from 'lodash';
 
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';

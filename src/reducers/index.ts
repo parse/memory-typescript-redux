@@ -1,6 +1,5 @@
 import { MemoryAction } from '../actions';
 import { StoreState, GameStatus } from '../types/index';
-import * as types from '../constants';
 
 import {
   START_GAME,
@@ -93,7 +92,7 @@ export function memoryReducer(
         };
       }
 
-    case types.INCREMENT_TRIES:
+    case INCREMENT_TRIES:
       return {
         ...state,
         numberOfTries: state.numberOfTries + 1,

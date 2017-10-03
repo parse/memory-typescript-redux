@@ -4,7 +4,7 @@ import * as actions from '../actions';
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { StoreState, Tile as TileType, GameStatus } from '../types/index';
+import { StoreState, GameStatus } from '../types/index';
 
 interface NavProps {
   startGame: () => void;

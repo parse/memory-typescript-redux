@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as actions from '../actions';
 import { Tile as TileType } from '../types/index';
 
 interface TileProps {
