@@ -35,7 +35,6 @@ function configureStore(initialState: StoreState, rootReducer: any, saga: any) {
 const store = configureStore(
   {
     tiles: [],
-    selectedTiles: [],
     isWaiting: false,
     numberOfTries: 0,
   },
