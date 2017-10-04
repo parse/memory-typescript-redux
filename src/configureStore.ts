@@ -2,6 +2,8 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { StoreState, GameStatus } from './types/index';
+import rootSaga from './sagas/index';
+import { memoryReducer } from './reducers/index';
 
 const defaultState = {
   tiles: [],
@@ -11,10 +13,12 @@ const defaultState = {
 };
 
 export default function configureStore(
-  rootReducer: any,
-  saga: any,
+  rootReducer?: any,
+  saga?: any,
   initialState?: StoreState
 ) {
+  rootReducer = memoryReducer;
+  saga = rootSaga;
   initialState = defaultState;
 
   const sagaMiddleware = createSagaMiddleware();

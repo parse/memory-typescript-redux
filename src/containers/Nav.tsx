@@ -3,6 +3,7 @@ import * as actions from '../actions';
 
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 import { StoreState, GameStatus } from '../types/index';
 
@@ -53,6 +54,12 @@ class Nav extends React.Component<NavProps, {}> {
           </div>
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
+              <li>
+                <Link to={'/'}>Game</Link>
+              </li>
+              <li>
+                <Link to={'/about'}>About</Link>
+              </li>
               <li>
                 <button onClick={() => this.handleClickResetButton()}>
                   Restart
