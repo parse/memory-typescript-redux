@@ -20,6 +20,7 @@ export default function universalLoader(req: any, res: any) {
       console.error('read err', err);
       return res.status(404).end();
     }
+
     const store = configureStore();
     const context = {};
     const markup = ReactDOMServer.renderToString(
@@ -30,14 +31,7 @@ export default function universalLoader(req: any, res: any) {
       </Provider>
     );
 
-    // // we're good, send the response
-    // if (context.url) {
-    //   // Somewhere a `<Redirect>` was rendered
-    //   redirect(301, context.url);
-    // } else {
-    // we're good, send the response
     const RenderedApp = htmlData.replace('{{SSR}}', markup);
     res.send(RenderedApp);
-    // }
   });
 }
