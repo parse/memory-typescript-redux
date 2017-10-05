@@ -16,7 +16,11 @@ class NotificationCentre extends React.Component<NotificationsProps, {}> {
       return null;
     }
 
-    return <Notification notification={notification} />;
+    return (
+      <div className={'notificationCenter'}>
+        <Notification notification={notification} />
+      </div>
+    );
   }
 }
 

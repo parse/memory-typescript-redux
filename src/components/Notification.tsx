@@ -1,16 +1,25 @@
 import * as React from 'react';
-import { Notification as NotificationType } from '../types/index';
+import { Severity, Notification as NotificationType } from '../types/index';
 
 interface NotificationProps {
   notification: NotificationType;
 }
 
-class Notification extends React.Component<NotificationProps, {}> {
+export default class Notification extends React.Component<
+  NotificationProps,
+  {}
+> {
   render() {
     const { notification } = this.props;
 
-    return <strong>{notification.message}</strong>;
+    if (notification.severity === Severity.Info) {
+      return <strong style={{ color: 'red' }}>{notification.message}</strong>;
+    } else if (notification.severity === Severity.Success) {
+      return <strong style={{ color: 'green' }}>{notification.message}</strong>;
+    } else if (notification.severity === Severity.Error) {
+      return <strong style={{ color: 'red' }}>{notification.message}</strong>;
+    }
+
+    return null;
   }
 }
-
-export default Notification;
