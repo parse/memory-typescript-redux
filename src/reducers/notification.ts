@@ -1,4 +1,6 @@
 import { NotificationAction } from '../actions/notifications';
+import { MemoryAction } from '../actions/memory';
+
 import { NotificationState } from '../types/index';
 import * as update from 'immutability-helper';
 
@@ -7,13 +9,15 @@ import {
   HIDE_NOTIFICATION,
 } from '../constants/notifications';
 
+import { START_GAME } from '../constants/memory';
+
 const initialState = {
   notifications: [],
 };
 
 export default function notificationReducer(
   state: NotificationState = initialState,
-  action: NotificationAction
+  action: NotificationAction | MemoryAction
 ): NotificationState {
   switch (action.type) {
     case SHOW_NOTIFICATION:
@@ -49,6 +53,10 @@ export default function notificationReducer(
           $splice: [[notificationIndex, 1]],
         },
       });
+    case START_GAME:
+      return {
+        notifications: [],
+      };
     default:
       return state;
   }

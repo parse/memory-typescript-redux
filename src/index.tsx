@@ -13,7 +13,7 @@ import './styles/css/index.css';
 const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store as any}>
     <BrowserRouter>
       <App />
     </BrowserRouter>

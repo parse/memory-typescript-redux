@@ -24,7 +24,7 @@ export default function universalLoader(req: any, res: any) {
     const store = configureStore();
     const context = {};
     const markup = ReactDOMServer.renderToString(
-      <Provider store={store}>
+      <Provider store={store as any}>
         <StaticRouter location={req.url} context={context}>
           <App />
         </StaticRouter>

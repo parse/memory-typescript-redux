@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { persistStore, autoRehydrate } from 'redux-persist';
 
 import { StoreState } from './../types/index';
 import gameSaga from './../sagas/game';
@@ -12,12 +13,13 @@ export default function configureStore(initialState?: StoreState) {
 
   const internalStore = createStore(
     rootReducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(sagaMiddleware))
+    composeWithDevTools(applyMiddleware(sagaMiddleware), autoRehydrate())
   );
 
   sagaMiddleware.run(gameSaga);
   sagaMiddleware.run(notificationSaga);
+
+  persistStore(internalStore);
 
   return internalStore;
 }
