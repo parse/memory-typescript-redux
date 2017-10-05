@@ -73,7 +73,9 @@ class Nav extends React.Component<NavProps, {}> {
   }
 }
 
-function mapStateToProps({ numberOfTries, status }: StoreState) {
+function mapStateToProps(state: StoreState) {
+  const { numberOfTries, status } = state.memory;
+
   return {
     numberOfTries,
     status,

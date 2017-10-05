@@ -4,16 +4,37 @@ export enum GameStatus {
   Ended = 2,
 }
 
+export enum Severity {
+  Info,
+  Success,
+  Error,
+}
+
 export interface StoreState {
-  tiles: Array<Tile>;
-  isWaiting: Boolean;
-  numberOfTries: number;
-  status: GameStatus;
+  readonly memory: MemoryState;
+  readonly notification?: NotificationState;
+}
+
+export interface MemoryState {
+  readonly tiles: Array<Tile>;
+  readonly isWaiting: Boolean;
+  readonly numberOfTries: number;
+  readonly status: GameStatus;
+}
+
+export interface NotificationState {
+  readonly notifications?: Array<Notification>;
 }
 
 export interface Tile {
-  image: String;
-  tileKey: number;
-  flipped: Boolean;
-  matched: Boolean;
+  readonly image: String;
+  readonly tileKey: number;
+  readonly flipped: Boolean;
+  readonly matched: Boolean;
+}
+
+export interface Notification {
+  readonly uid: number;
+  readonly message: String;
+  readonly severity: Severity;
 }

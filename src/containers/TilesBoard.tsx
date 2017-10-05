@@ -56,7 +56,7 @@ class TilesBoard extends React.Component<TilesBoardProps, {}> {
 }
 
 function mapStateToProps(state: StoreState) {
-  const { tiles, isWaiting } = state;
+  const { tiles, isWaiting } = state.memory;
 
   return {
     tiles,

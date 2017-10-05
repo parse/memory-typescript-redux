@@ -1,6 +1,6 @@
 import * as constants from '../constants';
 import { getTiles } from '../data/randomTiles';
-import { Tile } from '../types/index';
+import { Tile, Severity } from '../types/index';
 
 export interface StartGame {
   type: constants.START_GAME;
@@ -62,6 +62,37 @@ export function incrementTries(): IncrementTries {
   };
 }
 
+export interface ShowNotification {
+  type: constants.SHOW_NOTIFICATION;
+  message: String;
+  severity: Severity;
+  uid: number;
+}
+
+export function showNotification(
+  message: String,
+  severity: Severity,
+  uid?: number
+): ShowNotification {
+  return {
+    uid: uid || Date.now(),
+    type: constants.SHOW_NOTIFICATION,
+    message,
+    severity,
+  };
+}
+export interface HideNotification {
+  type: constants.HIDE_NOTIFICATION;
+  uid: number;
+}
+
+export function hideNotification(uid: number): HideNotification {
+  return {
+    uid,
+    type: constants.HIDE_NOTIFICATION,
+  };
+}
+
 export interface MatchCheck {
   type: constants.MATCH_CHECK;
   flippedTiles: Array<Tile>;
@@ -81,3 +112,5 @@ export type MemoryAction =
   | ToggleIsWaiting
   | IncrementTries
   | MatchCheck;
+
+export type NotificationAction = ShowNotification | HideNotification;
