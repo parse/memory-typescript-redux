@@ -3,7 +3,7 @@ import * as actions from '../actions/memory';
 
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { StoreState, GameStatus } from '../types/index';
 
@@ -33,8 +33,12 @@ class Nav extends React.Component<NavProps, {}> {
 
     return (
       <p className="navbar-brand">
-        {status === GameStatus.Ongoing && <span>Game is ongoing</span>}
-        {status === GameStatus.Ended && <span>Game has ended</span>}
+        {status === GameStatus.Ongoing && (
+          <span className="label label-info">Game is ongoing</span>
+        )}
+        {status === GameStatus.Ended && (
+          <span className="label label-danger">Game has ended</span>
+        )}
       </p>
     );
   }
@@ -55,15 +59,20 @@ class Nav extends React.Component<NavProps, {}> {
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <Link to={'/'}>Game</Link>
+                <NavLink to={'/'}>Game</NavLink>
               </li>
               <li>
-                <Link to={'/about'}>About</Link>
+                <NavLink to={'/about'}>About</NavLink>
               </li>
               <li>
-                <button onClick={() => this.handleClickResetButton()}>
-                  Restart
-                </button>
+                <p className="navbar-btn">
+                  <a
+                    onClick={() => this.handleClickResetButton()}
+                    className="btn btn-primary"
+                  >
+                    Restart
+                  </a>
+                </p>
               </li>
             </ul>
           </div>
