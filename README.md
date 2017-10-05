@@ -1,6 +1,21 @@
 # memory-typescript-redux
 
-Demonstrates a classic memory game using Typescript, redux, redux-saga, react-router v4 with a create-react-app that **has not been ejected** (using create-react-app-typescript).
+Prepared as part of a JS talk.
+
+Demonstrates a classic memory game using tooling such as:
+
+* Typescript
+* redux
+* redux-saga
+* react-router v4
+* create-react-app that **has not been ejected** (using create-react-app-typescript).
+
+Features:
+
+* Kept the ability to eject as usual from create-react-app using ``yarn run eject``
+* "Toasts" powered by redux-saga
+* Redux store hydration
+* Server Side Rendering
 
 ## Installation
 
@@ -30,3 +45,7 @@ yarn run sass
 
 ## Comments
 Having a good pipeline for styles was not part of the scope of this repository.
+
+## Screenshot
+
+![Screenshot](https://user-images.githubusercontent.com/60202/31231467-47f3a86a-a9e7-11e7-9c33-c5311fc73dcd.png?raw=true)
