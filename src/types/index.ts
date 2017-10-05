@@ -12,7 +12,7 @@ export enum Severity {
 
 export interface StoreState {
   readonly memory: MemoryState;
-  readonly notification?: NotificationState;
+  readonly notification: NotificationState;
 }
 
 export interface MemoryState {
@@ -23,7 +23,7 @@ export interface MemoryState {
 }
 
 export interface NotificationState {
-  readonly notifications?: Array<Notification>;
+  readonly notifications: Array<Notification>;
 }
 
 export interface Tile {

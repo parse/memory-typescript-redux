@@ -32,9 +32,9 @@ export default function notificationReducer(
         notifications: change,
       });
     case HIDE_NOTIFICATION:
-      const notificationIndex =
-        state.notifications &&
-        state.notifications.findIndex(item => item.uid === action.uid);
+      const notificationIndex = state.notifications.findIndex(
+        item => item.uid === action.uid
+      );
 
       // Could not find entry
       if (notificationIndex === -1) {

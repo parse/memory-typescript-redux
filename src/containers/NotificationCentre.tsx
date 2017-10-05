@@ -27,8 +27,7 @@ class NotificationCentre extends React.Component<NotificationsProps, {}> {
 function mapStateToProps(state: StoreState) {
   return {
     notification:
-      state.notification &&
-      state.notification.notifications &&
+      state.notification.notifications.length > 0 &&
       state.notification.notifications[0],
   };
 }
