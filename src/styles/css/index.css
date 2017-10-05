@@ -63,7 +63,7 @@ body {
   max-width: 800px; }
 
 .notificationCenter {
-  visibility: visible;
+  visibility: hidden;
   min-width: 250px;
   margin-left: -125px;
   background-color: #333;
@@ -76,6 +76,8 @@ body {
   left: 50%;
   bottom: 30px;
   animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+  .notificationCenter .notification {
+    visibility: visible; }
 
 @keyframes fadein {
   from {

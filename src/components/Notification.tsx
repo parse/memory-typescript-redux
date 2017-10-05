@@ -12,14 +12,20 @@ export default class Notification extends React.Component<
   render() {
     const { notification } = this.props;
 
-    if (notification.severity === Severity.Info) {
-      return <strong style={{ color: 'red' }}>{notification.message}</strong>;
-    } else if (notification.severity === Severity.Success) {
-      return <strong style={{ color: 'green' }}>{notification.message}</strong>;
-    } else if (notification.severity === Severity.Error) {
-      return <strong style={{ color: 'red' }}>{notification.message}</strong>;
-    }
+    const content = () => {
+      if (notification.severity === Severity.Info) {
+        return <strong style={{ color: 'red' }}>{notification.message}</strong>;
+      } else if (notification.severity === Severity.Success) {
+        return (
+          <strong style={{ color: 'green' }}>{notification.message}</strong>
+        );
+      } else if (notification.severity === Severity.Error) {
+        return <strong style={{ color: 'red' }}>{notification.message}</strong>;
+      } else {
+        return null;
+      }
+    };
 
-    return null;
+    return <div className={'notificationCenter notification'}>{content()}</div>;
   }
 }

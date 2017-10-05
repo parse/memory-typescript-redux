@@ -5,20 +5,20 @@ import { StoreState, Notification as NotificationType } from '../types/index';
 import Notification from './../components/Notification';
 
 interface NotificationsProps {
-  notification: NotificationType;
+  notifications: Array<NotificationType>;
 }
 
 class NotificationCentre extends React.Component<NotificationsProps, {}> {
   render() {
-    const { notification } = this.props;
+    const { notifications } = this.props;
 
-    if (!notification) {
-      return null;
-    }
+    console.log(notifications);
 
     return (
       <div className={'notificationCenter'}>
-        <Notification notification={notification} />
+        {notifications.map(notification => (
+          <Notification key={notification.uid} notification={notification} />
+        ))}
       </div>
     );
   }
@@ -26,9 +26,7 @@ class NotificationCentre extends React.Component<NotificationsProps, {}> {
 
 function mapStateToProps(state: StoreState) {
   return {
-    notification:
-      state.notification.notifications.length > 0 &&
-      state.notification.notifications[0],
+    notifications: state.notification.notifications,
   };
 }
 
