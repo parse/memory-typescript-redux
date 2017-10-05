@@ -1,8 +1,11 @@
-import { NotificationAction } from '../actions';
+import { NotificationAction } from '../actions/notifications';
 import { NotificationState } from '../types/index';
 import * as update from 'immutability-helper';
 
-import { SHOW_NOTIFICATION, HIDE_NOTIFICATION } from '../constants/index';
+import {
+  SHOW_NOTIFICATION,
+  HIDE_NOTIFICATION,
+} from '../constants/notifications';
 
 const initialState = {
   notifications: [],

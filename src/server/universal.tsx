@@ -6,7 +6,7 @@ import * as ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 
 import App from '../App';
-import configureStore from './../configureStore';
+import configureStore from './../store/';
 
 export interface RouterContext {
   url: String;

@@ -1,17 +1,16 @@
 import { takeEvery, put, all, call } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
-import { HideNotification } from '../actions';
+import { HideNotification, hideNotification } from '../actions/notifications';
 
-import * as constants from '../constants';
-import * as actions from '../actions';
+import * as notificationConstants from '../constants/notifications';
 
 function* notificationSequence(action: HideNotification) {
   yield call(delay, 3000);
-  yield put(actions.hideNotification(action.uid));
+  yield put(hideNotification(action.uid));
 }
 
 export default function* root() {
   return yield all([
-    takeEvery(constants.SHOW_NOTIFICATION, notificationSequence),
+    takeEvery(notificationConstants.SHOW_NOTIFICATION, notificationSequence),
   ]);
 }

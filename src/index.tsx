@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 
-import configureStore from './configureStore';
+import configureStore from './store/';
 
 import './styles/css/index.css';
 

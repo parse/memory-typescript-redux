@@ -1,11 +1,10 @@
 import * as React from 'react';
-import * as actions from '../actions';
+import * as actions from '../actions/memory';
 
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Tile as TileType } from '../types/index';
-import { StoreState } from '../types/index';
+import { Tile as TileType, StoreState } from '../types/index';
 
 import Tile from '../components/Tile';
 

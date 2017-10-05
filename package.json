@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@types/immutability-helper": "^2.0.15",
+    "@types/react-router-dom": "^4.0.8",
     "@types/body-parser": "^1.16.5",
     "@types/compression": "^0.0.34",
     "@types/enzyme": "^2.8.10",
@@ -20,8 +22,6 @@
     "tslint-config-prettier": "^1.5.0"
   },
   "dependencies": {
-    "@types/immutability-helper": "^2.0.15",
-    "@types/react-router-dom": "^4.0.8",
     "body-parser": "^1.18.2",
     "compression": "^1.7.1",
     "enzyme": "^3.1.0",

@@ -1,4 +1,4 @@
-import { MemoryAction } from '../actions';
+import { MemoryAction } from '../actions/memory';
 import { MemoryState, GameStatus } from '../types/index';
 
 import {
@@ -8,7 +8,7 @@ import {
   TOGGLE_IS_WAITING,
   MATCH_CHECK,
   INCREMENT_TRIES,
-} from '../constants/index';
+} from '../constants/memory';
 
 const initialState = {
   tiles: [],

@@ -14,7 +14,9 @@ export default class Notification extends React.Component<
 
     const content = () => {
       if (notification.severity === Severity.Info) {
-        return <strong style={{ color: 'red' }}>{notification.message}</strong>;
+        return (
+          <strong style={{ color: 'orange' }}>{notification.message}</strong>
+        );
       } else if (notification.severity === Severity.Success) {
         return (
           <strong style={{ color: 'green' }}>{notification.message}</strong>
