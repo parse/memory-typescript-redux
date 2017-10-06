@@ -2,6 +2,8 @@
 
 Prepared as part of a JS talk.
 
+Build status: [![CircleCI](https://circleci.com/gh/parse/memory-typescript-redux.svg?style=svg)](https://circleci.com/gh/parse/memory-typescript-redux)
+
 Demonstrates a classic memory game using tooling such as:
 
 * Typescript
