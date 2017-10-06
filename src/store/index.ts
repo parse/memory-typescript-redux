@@ -13,6 +13,7 @@ export default function configureStore(initialState?: StoreState) {
 
   const internalStore = createStore(
     rootReducer,
+    initialState,
     composeWithDevTools(applyMiddleware(sagaMiddleware), autoRehydrate())
   );
 

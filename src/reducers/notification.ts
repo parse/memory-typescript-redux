@@ -1,4 +1,4 @@
-import { NotificationAction } from '../actions/notifications';
+import { NotificationAction } from '../actions/notification';
 import { MemoryAction } from '../actions/memory';
 
 import { NotificationState } from '../types/index';
@@ -7,7 +7,7 @@ import * as update from 'immutability-helper';
 import {
   SHOW_NOTIFICATION,
   HIDE_NOTIFICATION,
-} from '../constants/notifications';
+} from '../constants/notification';
 
 import { START_GAME } from '../constants/memory';
 

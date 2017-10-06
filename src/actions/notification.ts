@@ -1,4 +1,4 @@
-import * as constants from '../constants/notifications';
+import * as constants from '../constants/notification';
 import { Severity } from '../types/index';
 
 export interface ShowNotification {

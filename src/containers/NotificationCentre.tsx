@@ -12,8 +12,6 @@ class NotificationCentre extends React.Component<NotificationsProps, {}> {
   render() {
     const { notifications } = this.props;
 
-    console.log(notifications);
-
     return (
       <div className={'notificationCenter'}>
         {notifications.map(notification => (

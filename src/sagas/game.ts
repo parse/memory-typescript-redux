@@ -11,7 +11,7 @@ import { Severity, StoreState } from '../types/index';
 
 import * as memoryConstants from '../constants/memory';
 import * as memoryActions from '../actions/memory';
-import * as notificationActions from '../actions/notifications';
+import * as notificationActions from '../actions/notification';
 
 function* checkCardsForMatch() {
   const selectedCards = yield select<StoreState>(state =>
