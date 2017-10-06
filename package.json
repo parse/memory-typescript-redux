@@ -23,7 +23,6 @@
     "@types/redux-persist": "^4.3.1",
     "@types/redux-saga": "^0.10.5",
     "react-addons-test-utils": "^15.6.2",
-    "react-scripts-ts": "2.7.0",
     "deep-freeze-strict": "^1.1.1",
     "chai": "^4.1.2",
     "enzyme": "^3.1.0",
@@ -47,7 +46,8 @@
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-persist": "^4.10.1",
-    "redux-saga": "^0.15.6"
+    "redux-saga": "^0.15.6",
+    "react-scripts-ts": "2.7.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",
