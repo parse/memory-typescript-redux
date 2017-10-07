@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav renders correctly game status ENDED 1`] = `
+<nav
+  className="navbar navbar-default navbar-top"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="navbar-header"
+    >
+      <p
+        className="navbar-brand"
+      >
+        Number of tries:
+         
+        <span
+          className="label label-success"
+        >
+          0
+        </span>
+      </p>
+      <p
+        className="navbar-brand"
+      >
+        <span
+          className="label label-info"
+        >
+          Game is ongoing
+        </span>
+      </p>
+    </div>
+    <div
+      className="collapse navbar-collapse"
+    >
+      <ul
+        className="nav navbar-nav navbar-right"
+      >
+        <li>
+          <a
+            aria-current="true"
+            className="active"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            Game
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={false}
+            className={undefined}
+            href="/about"
+            onClick={[Function]}
+            style={undefined}
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <p
+            className="navbar-btn"
+          >
+            <a
+              className="btn btn-primary"
+              onClick={[Function]}
+            >
+              Restart
+            </a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Nav renders correctly game status ONGOING 1`] = `
+<nav
+  className="navbar navbar-default navbar-top"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="navbar-header"
+    >
+      <p
+        className="navbar-brand"
+      >
+        Number of tries:
+         
+        <span
+          className="label label-success"
+        >
+          0
+        </span>
+      </p>
+      <p
+        className="navbar-brand"
+      >
+        <span
+          className="label label-info"
+        >
+          Game is ongoing
+        </span>
+      </p>
+    </div>
+    <div
+      className="collapse navbar-collapse"
+    >
+      <ul
+        className="nav navbar-nav navbar-right"
+      >
+        <li>
+          <a
+            aria-current="true"
+            className="active"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            Game
+          </a>
+        </li>
+        <li>
+          <a
+            aria-current={false}
+            className={undefined}
+            href="/about"
+            onClick={[Function]}
+            style={undefined}
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <p
+            className="navbar-btn"
+          >
+            <a
+              className="btn btn-primary"
+              onClick={[Function]}
+            >
+              Restart
+            </a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;

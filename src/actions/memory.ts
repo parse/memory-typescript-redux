@@ -1,5 +1,5 @@
 import * as constants from '../constants/memory';
-import { getTiles } from '../data/randomTiles';
+import { getTiles } from '../data/tiles';
 import { Tile } from '../types/index';
 
 export interface StartGame {

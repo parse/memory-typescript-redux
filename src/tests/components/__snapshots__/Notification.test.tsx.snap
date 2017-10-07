@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="notificationCenter notification"
+>
+  <strong
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Lol
+  </strong>
+</div>
+`;

@@ -3,7 +3,7 @@ const df = require('deep-freeze-strict');
 import { GameStatus } from '../../types/index';
 import * as types from '../../constants/memory';
 import memoryReducer from '../../reducers/memory';
-import { getTiles } from '../../data/randomTiles';
+import { getTiles } from '../../data/tiles';
 
 describe('Reducers', () => {
   describe('memory reducer', () => {

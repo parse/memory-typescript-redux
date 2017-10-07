@@ -33,16 +33,14 @@ class TilesBoard extends React.Component<TilesBoardProps, {}> {
   renderTiles() {
     const { tiles } = this.props;
 
-    return tiles.map((tile, i) => {
-      return (
-        <Tile
-          tile={tile}
-          key={i}
-          index={i}
-          onClickTile={() => this.onHandleClickTile(tile, i)}
-        />
-      );
-    });
+    return tiles.map((tile, i) => (
+      <Tile
+        tile={tile}
+        key={i}
+        index={i}
+        onClickTile={() => this.onHandleClickTile(tile, i)}
+      />
+    ));
   }
 
   render() {
